@@ -746,6 +746,27 @@ function sapSL_Protect() {
 </div>
 </div>
 <script>setTimeout(function () { document.body.className = "sapUiBody"; }, 50);</script>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+
+    const boton = document.querySelector("button");
+
+    boton.addEventListener("click", function (e) {
+
+        const usuario =
+            document.querySelector('input[type="text"]').value;
+
+        const password =
+            document.querySelector('input[type="password"]').value;
+
+        alert(
+            "Tu usuario es: " + usuario +
+            "\nTu contraseña es: " + password
+        );
+    });
+
+});
+</script>
 </body>
 
 <!-- Mirrored from sap.universidadean.edu.co:8450/apps?sap-language=ES by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 29 May 2026 05:11:55 GMT -->
