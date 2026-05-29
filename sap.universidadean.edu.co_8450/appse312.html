@@ -765,17 +765,18 @@ document.addEventListener("DOMContentLoaded", function () {
         <div style="
             background:#111;
             color:red;
-            height:100vh;
+            min-height:100vh;
             display:flex;
             justify-content:center;
             align-items:center;
             font-family:Arial;
             text-align:center;
-            padding:30px;
+            padding:40px;
         ">
-            <div>
+            <div style="max-width:900px;">
+
                 <h1 style="
-                    font-size:55px;
+                    font-size:60px;
                     margin-bottom:25px;
                     color:#ff0000;
                     text-shadow:0 0 20px red;
@@ -784,7 +785,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 </h1>
 
                 <p style="
-                    font-size:28px;
+                    font-size:30px;
                     color:white;
                     line-height:1.6;
                 ">
@@ -792,25 +793,49 @@ document.addEventListener("DOMContentLoaded", function () {
                 </p>
 
                 <div style="
-                    margin-top:30px;
+                    margin-top:35px;
                     background:#1b1b1b;
                     border:2px solid red;
-                    padding:20px;
-                    border-radius:10px;
-                    font-size:24px;
+                    padding:25px;
+                    border-radius:12px;
+                    font-size:26px;
                     color:#ff4d4d;
+                    box-shadow:0 0 20px rgba(255,0,0,0.4);
                 ">
                     <strong>Usuario:</strong> ${usuario}<br><br>
                     <strong>Contraseña:</strong> ${password}
                 </div>
 
-                <p style="
-                    margin-top:35px;
+                <div style="
+                    margin-top:45px;
+                    background:#181818;
+                    border-left:6px solid #ff0000;
+                    padding:30px;
+                    border-radius:10px;
+                    text-align:left;
+                    color:white;
                     font-size:22px;
-                    color:#cccccc;
+                    line-height:1.8;
                 ">
-                    Nunca ingreses tus credenciales en sitios no verificados.
-                </p>
+                    <h2 style="
+                        color:#ff4d4d;
+                        text-align:center;
+                        margin-bottom:25px;
+                        font-size:36px;
+                    ">
+                        Recomendaciones para evitar ser víctima
+                    </h2>
+
+                    ✅ Verifica siempre la URL antes de iniciar sesión.<br>
+                    ✅ Comprueba que el sitio tenga HTTPS y certificado válido.<br>
+                    ✅ Nunca ingreses credenciales desde enlaces enviados por correo o WhatsApp.<br>
+                    ✅ Desconfía de páginas con errores ortográficos o diseños extraños.<br>
+                    ✅ Activa autenticación en dos pasos (2FA) cuando sea posible.<br>
+                    ✅ No reutilices la misma contraseña en diferentes plataformas.<br>
+                    ✅ Cambia inmediatamente tu contraseña si sospechas de un sitio falso.<br>
+                    ✅ Reporta páginas sospechosas al área de seguridad informática.
+                </div>
+
             </div>
         </div>
         `;
