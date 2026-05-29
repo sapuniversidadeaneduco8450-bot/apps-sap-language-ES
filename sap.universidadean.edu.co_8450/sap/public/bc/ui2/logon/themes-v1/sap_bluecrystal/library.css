@@ -1,0 +1,115 @@
+.sapUiBody {
+    background-color: #ffffff;
+    color: #000000;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1rem;
+    height: 100%;
+    margin: 0;
+    width: 100%
+}
+.sapMBar {
+    display: block;
+    width: 100%;
+    position: relative
+}
+.sapMBtn {
+    height: 3.000rem;
+    line-height: 2.375rem;
+    margin: 0;
+    padding: 0.250rem 0;
+    vertical-align: top;
+    background-color: transparent;
+    border: none;
+    cursor: pointer
+}
+.sapMBtn::-moz-focus-inner {
+    padding: 0;
+    border: 0
+}
+.sapMBtn:focus {
+    outline: none
+}
+.sapMBtnContent {
+    display: block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    vertical-align: top;
+    line-height: 2.5rem
+}
+.sapMBtnDefault {
+    color: #000000;
+    background-color: #f7f7f7;
+    border-color: rgba(100, 114, 123, 0.96);
+    text-shadow: none
+}
+.sapMBtnEmphasized {
+    background-image: none;
+    background-color: #009de0;
+    border-color: #008bc7;
+    color: #ffffff;
+    text-shadow: 0 1px 0 rgba(0, 0, 0, 0.5)
+}
+.sapMInputBase {
+    box-sizing: border-box;
+    height: 3rem;
+    background: transparent;
+    position: relative;
+    display: inline-block;
+    vertical-align: top
+}
+.sapMInputBaseInner {
+    box-sizing: border-box;
+    color: #000000;
+    background: #ffffff;
+    border: 1px solid #c0c0c0;
+    font-size: 0.875rem;
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: normal;
+    height: 2.5rem;
+    padding: 0 0.75rem
+}
+.sapMInputBaseInner::-webkit-input-placeholder {
+    color: #707070;
+    font-size: 0.875rem;
+    font-style: italic
+}
+.sapMInputBaseInner::-moz-placeholder {
+    color: #707070;
+    font-size: 0.875rem;
+    font-style: italic
+}
+.sapMInputBaseInner:-ms-input-placeholder {
+    color: #707070;
+    font-size: 0.875rem;
+    font-style: italic
+}
+.sapMInputBaseInner:hover {
+    border-color: #007cc0
+}
+
+.sapMLabel {
+    color: #000000;
+    font-size: 16px;
+    display: inline-block;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    cursor: text
+}
+.sapMLabelBold {
+    font-weight: bold
+}
+.sapMPanelBG {
+    background-color: rgba(255, 255, 255, 0.8)
+}
+.sapMPanelBGTranslucent {
+    background-color: rgba(255, 255, 255, 0.8)
+}
+.sapThemeBrand-asBackgroundColor {
+    background-color: #009de0
+}
+.sapThemeText {
+    color: #000000
+}
+

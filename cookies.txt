@@ -1,0 +1,6 @@
+# HTTrack Website Copier Cookie File
+# This file format is compatible with Netscape cookies
+sap.universidadean.edu.co:8450	TRUE	/	FALSE	1999999999	sap-login-XSRF_EAP	20260529051148-wiGNUWbnJTlsxGbv823atA%3d%3d
+sap.universidadean.edu.co:8450	TRUE	/	FALSE	1999999999	sap-usercontext	sap-language=ES&sap-client=300
+sap.universidadean.edu.co:8450	TRUE	/	FALSE	1999999999	SameSite	None
+

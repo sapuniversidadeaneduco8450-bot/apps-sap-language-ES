@@ -1,0 +1,752 @@
+﻿<!DOCTYPE html>
+<html style="height: 100%; margin: 0;">
+
+<!-- Mirrored from sap.universidadean.edu.co:8450/apps?sap-language=ES by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 29 May 2026 05:11:50 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="default" />
+<title>Entrada al sistema</title>
+<link rel="shortcut icon" href="sap/public/bc/ui2/logon/img/favicon.ico" />
+ <link rel="stylesheet" href="sap/public/bc/ui2/logon/themes-v1/sap_bluecrystal/library.css" />
+<style>
+* { outline: none; }
+input, select, button { font-family: inherit; font-size: inherit; }
+
+.sapUiBody { background-image: url("sap/public/bc/ui2/logon/img/bg_u.jpg"); background-repeat: no-repeat;}
+.sapUiBody { background-size: 100% auto; -webkit-background-size: 100% auto; background-attachment: scroll; }
+.sapUiSraLoginView { position: absolute; top: 0; left: 0; right: 0; bottom: 0; }
+.sapUiSraBrandingBar { position: absolute; top: 0; left: 0; right: 0; height: 8px; z-index: 99; }
+.sapUiSraHeader { text-align: center; position: absolute; top: 4px; left: 0; right: 0; background: rgba(0,0,0,0.6); box-shadow: inset 0px 0.5rem 0px 0px rgba(0,0,0,1); color: #ffffff; }
+    .sapUiSraHeader .sapUiSraTitle { font-size: 1.25em; font-weight: 600; padding: 4px 16px; }
+    .sapUiSraHeader .sapUiSraSubTitle { font-size: 1em; font-weight: 400; padding: 4px 16px; }
+/*.sapUiSraFooter { position: fixed; bottom: 0; left: 0; right: 0; height: 64px; z-index: 99; }*/
+.sapUiSraFooter { bottom: 0; left: 0; right: 0; height: 64px; }
+/* .sapUiSraFooterAbsolute .sapUiSraFooter { position: absolute; } */
+.sapUiSraFooterAbsolute .sapUiSraFooter { }
+/*.sapUiSraLoginLogo { position: absolute; bottom: 16px; left: 16px; height: 32px; }*/
+.sapUiSraLoginLogo { text-align: center; padding: 5rem; }
+.sapUiSraLoginCopyright { position: absolute; bottom: 16px; right: 16px; font-size: 0.75em; max-width: 320px; text-align: right;
+    color: #FFF100; }
+.sapUiSraLoginNormalSep { margin-top: 64px; }
+.sapUiSraLoginPage { margin-top: 100px; margin-right: auto; margin-left: auto; width: 400px; }
+    .sapUiSraLoginPage .sapMBar { height: 40px; line-height: 40px; padding-left: 16px; padding-right: 16px; }
+        .sapUiSraLoginPage .sapMBar + .sapMBar { margin-top: 8px; }
+    .sapUiSraLoginPage .sapMLabel { font-size: 1em; white-space: normal; line-height: 40px; display: inline-block; }
+    .sapUiSraLoginPage .sapMInputBase { margin: 0;  height: 40px; padding: 0px; }
+    .sapUiSraLoginPage .sapMBtn { width: 100%; box-shadow: 0px 1px 1px 0px rgba(0, 0, 0, 0.5), inset 0px 1px 0px 0px rgba(255, 255, 255, 0.2); height: 48px; padding: 0; }
+    .sapUiSraLoginPage .sapMBtnContent { line-height: 48px; }
+    .sapUiSraLoginPage .sapMBtnDefault, .sapUiSraLoginPage .sapMBtnEmphasized { vertical-align: baseline; }
+    .sapUiSraLoginPage .sapMInputBaseInner { background-color: transparent; border-style: none; margin: 0; padding: 0 8px; width: 100%; position: absolute; top: 0px; height: 40px; }
+    .sapUiSraLoginPage .sapUiSraMessage { height: auto; max-height: 64px; overflow-y: auto; line-height: normal; width: 368px; padding-top: 4px; padding-bottom: 4px; }
+    .sapUiSraLoginPage .sapUiSraMessageContainer { margin-top: 16px; }
+    .sapUiSraLoginPage .sapUiSraMessageError { border-color: &#x23;e52929; border-width: 2px; border-style: solid; background-color: &#x23;fad4d4; }
+    .sapUiSraLoginPage .sapUiSraMessageInfo { background-color: &#x23;f7f7f7; }
+    .sapUiSraLoginPage .sapThemeText { font-size: 0.875em; line-height: normal; }
+.sapUiSraMessageContainer .sapMBar { padding-left: 14px; padding-right: 14px; }
+.sapUiSraBtnBlock { height: 48px; overflow: hidden; }
+.sapUiSraLoginButtonBlock { margin-top: 48px; }
+    .sapUiSraLoginButtonBlock .sapUiSraBtnBlock + .sapUiSraBtnBlock { margin-top: 12px; }
+.sapUiSraSingleButtonBlock { margin-top: 48px; }
+.sapUiSraLoginForm .sapMBar, .sapUiSraChangePwdForm .sapMBar { width: 368px; }
+.sapUiSraLoginForm .sapMLabel { width: 120px; }
+.sapUiSraLoginForm .sapMInputBase { display: inline-block; width: 248px; }
+.sapUiSraChangePwdForm .sapMLabel { width: 176px; }
+.sapUiSraChangePwdForm .sapMInputBase { display: inline-block; width: 192px; }
+.sapUiSraChangePwdForm #USERNAME_FIELD-inner { padding: 0 8px; }
+.sapUiSraChangePwdEndForm .sapMLabel { width: 256px; }
+.sapUiSraTextError { color: rgb(229, 41, 41); }
+.sapUiSraLoginChangePwd .sapMLabel { width: 100%; text-align: center; }
+.sapUiMozSraSelect#LANGUAGE_SELECT { height: 1.25em; }
+.sapMBtn.sapMBtnDefault:hover, .sapMBtn.sapMBtnDefault:focus { background-color: &#x23;d0d0d0; }
+.sapMBtn.sapMBtnEmphasized:hover, .sapMBtn.sapMBtnEmphasized:focus { background-color: &#x23;007cc0; }
+.sapUiSraMessageError:hover, .sapUiSraMessageError:focus { background-color: &#x23;dab4b4; }
+.sapUiSraMessageInfo:hover, .sapUiSraMessageInfo:focus { background-color: &#x23;d0d0d0; }
+@media (max-height: 720px) {
+    .sapUiSraLoginPage { margin-top: 120px; }
+    .sapUiSraLoginButtonBlock { margin-top: 32px; }
+    .sapUiSraSingleButtonBlock { margin-top: 32px; }
+}
+/* Background image */
+@media (orientation: portrait) {
+    .sapUiBody { background-size: auto 100%; -webkit-background-size: auto 100%; }
+}
+/* Mobile portrait */
+@media (max-width: 480px) and (orientation: portrait), (max-width: 360px) {
+    .sapUiSraSubTitle { display: none; }
+    .sapUiBody {background-image: url("sap/public/bc/ui2/logon/img/bg_u.jpg"); }
+    .sapUiSraLoginView { font-size: 0.875em; overflow: visible; }
+    .sapUiSraLoginCopyright { max-width: 160px; }
+    /*.sapUiSraLoginPage { margin-top: 48px; width: 288px; }*/
+	.sapUiSraLoginPage { margin-top: 73px; width: 288px; }
+        .sapUiSraLoginPage .sapUiSraMessage { max-height: 34px; width: 256px; }
+        .sapUiSraLoginPage .sapUiSraMessageContainer { margin-top: 8px; }
+    .sapUiSraLoginButtonBlock { margin-top: 8px; }
+    .sapUiSraSingleButtonBlock { margin-top: 8px; }
+    .sapUiSraLoginForm .sapMBar, .sapUiSraChangePwdForm .sapMBar { width: 256px; }
+    .sapUiSraLoginForm .sapMLabel { width: 120px; }
+    .sapUiSraLoginForm .sapMInputBase { display: inline-block; width: 136px; }
+    .sapUiSraChangePwdForm .sapMLabel { width: 144px; }
+    .sapUiSraChangePwdForm .sapMInputBase { display: inline-block; width: 112px; }
+	.sapUiSraLoginLogo { padding: 2.5rem; }
+}
+@media (max-height: 459px) and (orientation: portrait), (max-height: 459px) and (max-width: 360px) {
+    .sapUiSraLoginHeight5 { height: 476px; }
+        .sapUiSraLoginHeight5 .sapUiSraFooter { background-color: #f7f7f7; }
+}
+@media (max-height: 411px) and (orientation: portrait), (max-height: 411px) and (max-width: 360px) {
+    .sapUiSraLoginHeight4 { height: 428px; }
+        .sapUiSraLoginHeight4 .sapUiSraFooter { background-color: #f7f7f7; }
+}
+@media only screen and (max-height: 363px) and (orientation: portrait), (max-height: 363px) and (max-width: 360px) {
+    .sapUiSraLoginHeight3 { height: 380px; }
+        .sapUiSraLoginHeight3 .sapUiSraFooter { background-color: #f7f7f7; }
+}
+@media only screen and (max-height: 315px) and (orientation: portrait), (max-height: 315px) and (max-width: 360px) {
+    .sapUiSraLoginHeight2 { height: 332px; }
+        .sapUiSraLoginHeight2 .sapUiSraFooter { background-color: #f7f7f7; }
+}
+/* Mobile landscape */
+@media (max-height: 568px) and (min-width: 361px) and (orientation: landscape) {
+    .sapUiSraSubTitle { display: none; }
+    .sapUiBody {background-image: url("sap/public/bc/ui2/logon/img/bg_u.jpg"); }
+    .sapUiSraLoginView { font-size: 0.875em; overflow: visible; }
+    .sapUiSraLoginPage { margin-top: 48px; width: 400px; }
+    .sapUiSraLoginCopyright { max-width: 320px; }
+    .sapUiSraLoginPage .sapUiSraMessage { max-height: 34px; width: 368px; }
+    .sapUiSraLoginPage .sapUiSraMessageContainer { margin-top: 8px; }
+    .sapUiSraBtnBlock { height: 40px; }
+    .sapUiSraLoginPage .sapMBtn { height: 40px; line-height: 40px; }
+    .sapUiSraLoginPage .sapMBtnContent { line-height: 40px; }
+    .sapUiSraLoginPage .sapMBar { }
+    .sapUiSraLoginButtonBlock { margin-top: 8px; }
+        .sapUiSraLoginButtonBlock .sapUiSraBtnBlock { display: inline-block; width: 192px; }
+            .sapUiSraLoginButtonBlock .sapUiSraBtnBlock + .sapUiSraBtnBlock { margin-top: 0; margin-left: 16px; }
+    .sapUiSraAfterLogin .sapUiSraLoginButtonBlock .sapUiSraBtnBlock { display: block; width: 400px; }
+    .sapUiSraSingleButtonBlock { margin-top: 8px; }
+    .sapUiSraLoginForm .sapMBar, .sapUiSraChangePwdForm .sapMBar { width: 368px; }
+    .sapUiSraLoginForm .sapMLabel { width: 120px; }
+    .sapUiSraLoginForm .sapMInputBase { display: inline-block; width: 248px; }
+    .sapUiSraChangePwdForm .sapMLabel { width: 176px; }
+    .sapUiSraChangePwdForm .sapMInputBase { display: inline-block; width: 192px; }
+}
+@media (max-height: 395px) and (min-width: 361px) and (orientation: landscape) {
+    .sapUiSraLoginHeight5 { height: 412px; }
+        .sapUiSraLoginHeight5 .sapUiSraFooter { background-color: #f7f7f7; }
+}
+@media (max-height: 347px) and (min-width: 361px) {
+    .sapUiSraLoginHeight4 { height: 364px; }
+        .sapUiSraLoginHeight4 .sapUiSraFooter { background-color: #f7f7f7; height: 0px;}
+}
+@media (max-height: 299px) and (min-width: 361px) {
+    .sapUiSraLoginHeight3 { height: 316px; }
+        .sapUiSraLoginHeight3 .sapUiSraFooter { background-color: #f7f7f7; }
+}
+@media (max-height: 251px) and (min-width: 361px) {
+    .sapUiSraLoginHeight2 { height: 268px; }
+        .sapUiSraLoginHeight2 .sapUiSraFooter { background-color: #f7f7f7; }
+}
+@media (max-height: 200px) {
+    .sapUiSraFooter { display: none; }
+}
+/* Login animation */
+.sapUiSraLoginPage { opacity: 1; transform: scale(1); transition: all 0.5s cubic-bezier(0.420, 0.000, 0.580, 1.000); -webkit-transform: scale(1); -webkit-transition: all 0.5s cubic-bezier(0.420, 0.000, 0.580, 1.000); -ms-transform: scale(1); -ms-transition: all 0.5s cubic-bezier(0.420, 0.000, 0.580, 1.000); }
+.sapUiSraLoginSplashScreen .sapUiSraLoginPage { opacity: 0.5; transform: scale(0.5); -webkit-transform: scale(0.5); -ms-transform: scale(0.5); }
+.sapUiSraAfterLogin .sapUiSraLoginHidden { opacity: 0; transition: opacity 0.5s; -webkit-transition: opacity 0.5s; -ms-transition: opacity 0.5s; }
+.sapUiSraLoginBtnBlock { position: relative; }
+.sapUiSraDisplayBeforeLogin { display: block; }
+.sapUiSraAfterLogin .sapUiSraDisplayBeforeLogin { display: none; }
+.sapUiSraDisplayAfterLogin { display: none; opacity: 0; transition: opacity 0.2s; -webkit-transition: opacity 0.2s; -ms-transition: opacity 0.2s; }
+.sapUiSraAfterLogin .sapUiSraDisplayAfterLogin { display: block; opacity: 1; }
+.sapUiSraLogonAnimation { display: none; opacity: 0; transition: opacity 0.2s; -webkit-transition: opacity 0.2s; -ms-transition: opacity 0.2s; }
+.sapUiSraShowLogonAnimation .sapUiSraLogonAnimation { display: block; opacity: 1; }
+#sapUiSraFlower { opacity: .5; position: absolute; right: 0; top: 0; left: 0; margin: 0 auto; padding-right: 25px; width: 25px; }
+.sapUiSraFlowerBlossom { animation-name: sapUiSraFlowerBlossomRotate; animation-iteration-count: infinite; animation-timing-function: linear; position: absolute; height: 25px; width: 25px; transform-origin: 100% 100%; -webkit-animation-name: sapUiSraFlowerBlossomRotate; -webkit-animation-iteration-count: infinite; -webkit-animation-timing-function: linear; -webkit-transform-origin: 100% 100%; -moz-transform-origin: 100% 100%; }
+.sapMBtn .sapUiSraFlowerBlossom { position: absolute; margin-left: auto; margin-right: auto; top: -77px; left: -100px; right: 0; opacity: 0.5; height: 100px!important; width: 100px!important; }
+#sapUiSraFlower .sapUiSraFlowerBlossom { animation-duration: 4s; -webkit-animation-duration: 4s; }
+.sapUiSraFlowerLeafContainer { animation-direction: alternate; animation-iteration-count: infinite; animation-timing-function: linear; position: absolute; height: inherit; width: inherit; transform-origin: 100% 100%; -webkit-animation-direction: alternate; -webkit-animation-iteration-count: infinite; -webkit-animation-timing-function: linear; -webkit-transform-origin: 100% 100%; -moz-transform-origin: 100% 100%; }
+.sapUiSraFlowerLeaf { animation-direction: alternate; animation-iteration-count: infinite; animation-timing-function: ease-in; background-color: #009DE0; border-radius: 100px; border-bottom-right-radius: 0; position: absolute; height: inherit; width: inherit; transform-origin: 100% 100%; -webkit-animation-direction: alternate; -webkit-animation-iteration-count: infinite; -webkit-animation-timing-function: ease-in; -webkit-transform-origin: 100% 100%; -moz-transform-origin: 100% 100%; }
+.sapMBtn #sapUiSraFlower .sapUiSraFlowerLeaf { background-color: white; }
+#sapUiSraFlower .sapUiSraFlowerLeafContainer1 { animation-duration: 4s; animation-name: sapUiSraFlowerFadeLeaf-1; -webkit-animation-duration: 4s; -webkit-animation-name: sapUiSraFlowerFadeLeaf-1; }
+#sapUiSraFlower .sapUiSraFlowerLeafContainer2 { animation-duration: 10s; animation-name: sapUiSraFlowerFadeLeaf-2; -webkit-animation-duration: 10s; -webkit-animation-name: sapUiSraFlowerFadeLeaf-2; }
+#sapUiSraFlower .sapUiSraFlowerLeafContainer3 { animation-duration: 9s; animation-name: sapUiSraFlowerFadeLeaf-3; -webkit-animation-duration: 9s; -webkit-animation-name: sapUiSraFlowerFadeLeaf-3; }
+#sapUiSraFlower .sapUiSraFlowerLeafContainer4 { animation-duration: 6s; animation-name: sapUiSraFlowerFadeLeaf-4; -webkit-animation-duration: 6s; -webkit-animation-name: sapUiSraFlowerFadeLeaf-4; }
+#sapUiSraFlower .sapUiSraFlowerLeafContainer5 { animation-duration: 10s; animation-name: sapUiSraFlowerFadeLeaf-5; -webkit-animation-duration: 10s; -webkit-animation-name: sapUiSraFlowerFadeLeaf-5; }
+.sapUiSraFlowerLeaf1 { animation-duration: 0.75s; -webkit-animation-duration: 0.75s; transform: rotate(0deg); -moz-transform: rotate(0deg); -webkit-transform: rotate(0deg); }
+#sapUiSraFlower .sapUiSraFlowerLeaf1 { animation-name: sapUiSraFlowerScaleLeaf-1; -webkit-animation-name: sapUiSraFlowerScaleLeaf-1; }
+.sapUiSraFlowerLeaf2 { animation-duration: 0.5s; -webkit-animation-duration: 0.5s; transform: rotate(72deg); -moz-transform: rotate(72deg); -webkit-transform: rotate(72deg); }
+#sapUiSraFlower .sapUiSraFlowerLeaf2 { animation-name: sapUiSraFlowerScaleLeaf-2; -webkit-animation-name: sapUiSraFlowerScaleLeaf-2; }
+.sapUiSraFlowerLeaf3 { animation-duration: 0.6s; -webkit-animation-duration: 0.6s; transform: rotate(144deg); -moz-transform: rotate(144deg); -webkit-transform: rotate(144deg); }
+#sapUiSraFlower .sapUiSraFlowerLeaf3 { animation-name: sapUiSraFlowerScaleLeaf-3; -webkit-animation-name: sapUiSraFlowerScaleLeaf-3; }
+.sapUiSraFlowerLeaf4 { animation-duration: 0.9s; -webkit-animation-duration: 0.9s; transform: rotate(216deg); -moz-transform: rotate(216deg); -webkit-transform: rotate(216deg); }
+#sapUiSraFlower .sapUiSraFlowerLeaf4 { animation-name: sapUiSraFlowerScaleLeaf-4; -webkit-animation-name: sapUiSraFlowerScaleLeaf-4; }
+.sapUiSraFlowerLeaf5 { animation-duration: 1.3s; -webkit-animation-duration: 1.3s; transform: rotate(288deg); -moz-transform: rotate(288deg); -webkit-transform: rotate(288deg); }
+#sapUiSraFlower .sapUiSraFlowerLeaf5 { animation-name: sapUiSraFlowerScaleLeaf-5; -webkit-animation-name: sapUiSraFlowerScaleLeaf-5; }
+@keyframes sapUiSraFlowerBlossomRotate {
+    100% { transform: rotate(360deg); -moz-transform: rotate(360deg); }
+}
+@-webkit-keyframes sapUiSraFlowerBlossomRotate {
+    from { -webkit-transform: rotate(0deg); }
+    to { -webkit-transform: rotate(360deg); }
+}
+@keyframes sapUiSraFlowerFadeLeaf-1 {
+    0% { opacity: 0.2; }
+    50% { opacity: 1; }
+    100% { opacity: 0.2; }
+}
+@keyframes sapUiSraFlowerFadeLeaf-2 {
+    0% { opacity: 0.2; }
+    50% { opacity: 1; }
+    100% { opacity: 0.2; }
+}
+@keyframes sapUiSraFlowerFadeLeaf-3 {
+    0% { opacity: 0.2; }
+    50% { opacity: 1; }
+    100% { opacity: 0.2; }
+}
+@keyframes sapUiSraFlowerFadeLeaf-4 {
+    0% { opacity: 0.2; }
+    50% { opacity: 1; }
+    100% { opacity: 0.2; }
+}
+@keyframes sapUiSraFlowerFadeLeaf-5 {
+    0% { opacity: 0.2; }
+    50% { opacity: 1; }
+    100% { opacity: 0.2; }
+}
+@-webkit-keyframes sapUiSraFlowerFadeLeaf-1 {
+    0% { opacity: 0.2; }
+    50% { opacity: 1; }
+    100% { opacity: 0.2; }
+}
+@-webkit-keyframes sapUiSraFlowerFadeLeaf-2 {
+    0% { opacity: 0.2; }
+    50% { opacity: 1; }
+    100% { opacity: 0.2; }
+}
+@-webkit-keyframes sapUiSraFlowerFadeLeaf-3 {
+    0% { opacity: 0.2; }
+    50% { opacity: 1; }
+    100% { opacity: 0.2; }
+}
+@-webkit-keyframes sapUiSraFlowerFadeLeaf-4 {
+    0% { opacity: 0.2; }
+    50% { opacity: 1; }
+    100% { opacity: 0.2; }
+}
+@-webkit-keyframes sapUiSraFlowerFadeLeaf-5 {
+    0% { opacity: 0.2; }
+    50% { opacity: 1; }
+    100% { opacity: 0.2; }
+}
+@keyframes sapUiSraFlowerScaleLeaf-1 {
+    100% { transform: scale(1.25) rotate(0deg); }
+}
+@keyframes sapUiSraFlowerScaleLeaf-2 {
+    100% { transform: scale(1.25) rotate(77deg); }
+}
+@keyframes sapUiSraFlowerScaleLeaf-3 {
+    100% { transform: scale(1.25) rotate(144deg); }
+}
+@keyframes sapUiSraFlowerScaleLeaf-4 {
+    100% { transform: scale(1.25) rotate(216deg); }
+}
+@keyframes sapUiSraFlowerScaleLeaf-5 {
+    100% { transform: scale(1.25) rotate(288deg); }
+}
+@-webkit-keyframes sapUiSraFlowerScaleLeaf-1 {
+    100% { -webkit-transform: scale(1.25) rotate(0deg); }
+}
+@-webkit-keyframes sapUiSraFlowerScaleLeaf-2 {
+    100% { -webkit-transform: scale(1.25) rotate(77deg); }
+}
+@-webkit-keyframes sapUiSraFlowerScaleLeaf-3 {
+    100% { -webkit-transform: scale(1.25) rotate(144deg); }
+}
+@-webkit-keyframes sapUiSraFlowerScaleLeaf-4 {
+    100% { -webkit-transform: scale(1.25) rotate(216deg); }
+}
+@-webkit-keyframes sapUiSraFlowerScaleLeaf-5 {
+    100% { -webkit-transform: scale(1.25) rotate(288deg); }
+}
+.sapUiSraBtnBlock{width:100% !important;} .sapUiSraBtnBlock:nth-of-type(2) { display:none; }</style>
+
+<!--[if lte IE 8]>
+<style>
+* { outline: none; }
+input, select, button { font-family: inherit; font-size: inherit; }
+
+.sapUiBody { background-image: url("/sap/public/bc/ui2/logon/img/bg_u.jpg"); background-repeat: no-repeat;}
+.sapUiBody { background-size: 100% auto; -webkit-background-size: 100% auto; background-attachment: scroll; }
+.sapUiSraLoginView { position: absolute; top: 0; left: 0; right: 0; bottom: 0; }
+.sapUiSraBrandingBar { position: absolute; top: 0; left: 0; right: 0; height: 8px; z-index: 99; }
+.sapUiSraHeader { text-align: center; position: absolute; top: 4px; left: 0; right: 0; background: rgba(0,0,0,0.6); box-shadow: inset 0px 0.5rem 0px 0px rgba(0,0,0,1); color: #ffffff; }
+    .sapUiSraHeader .sapUiSraTitle { font-size: 1.25em; font-weight: 600; padding: 4px 16px; }
+    .sapUiSraHeader .sapUiSraSubTitle { font-size: 1em; font-weight: 400; padding: 4px 16px; }
+/*.sapUiSraFooter { position: fixed; bottom: 0; left: 0; right: 0; height: 64px; z-index: 99; }*/
+.sapUiSraFooter { bottom: 0; left: 0; right: 0; height: 64px; }
+/* .sapUiSraFooterAbsolute .sapUiSraFooter { position: absolute; } */
+.sapUiSraFooterAbsolute .sapUiSraFooter { }
+/*.sapUiSraLoginLogo { position: absolute; bottom: 16px; left: 16px; height: 32px; }*/
+.sapUiSraLoginLogo { text-align: center; padding: 5rem; }
+.sapUiSraLoginCopyright { position: absolute; bottom: 16px; right: 16px; font-size: 0.75em; max-width: 320px; text-align: right;
+    color: #FFF100; }
+.sapUiSraLoginNormalSep { margin-top: 64px; }
+.sapUiSraLoginPage { margin-top: 100px; margin-right: auto; margin-left: auto; width: 400px; }
+    .sapUiSraLoginPage .sapMBar { height: 40px; line-height: 40px; padding-left: 16px; padding-right: 16px; }
+        .sapUiSraLoginPage .sapMBar + .sapMBar { margin-top: 8px; }
+    .sapUiSraLoginPage .sapMLabel { font-size: 1em; white-space: normal; line-height: 40px; display: inline-block; }
+    .sapUiSraLoginPage .sapMInputBase { margin: 0;  height: 40px; padding: 0px; }
+    .sapUiSraLoginPage .sapMBtn { width: 100%; box-shadow: 0px 1px 1px 0px rgba(0, 0, 0, 0.5), inset 0px 1px 0px 0px rgba(255, 255, 255, 0.2); height: 48px; padding: 0; }
+    .sapUiSraLoginPage .sapMBtnContent { line-height: 48px; }
+    .sapUiSraLoginPage .sapMBtnDefault, .sapUiSraLoginPage .sapMBtnEmphasized { vertical-align: baseline; }
+    .sapUiSraLoginPage .sapMInputBaseInner { background-color: transparent; border-style: none; margin: 0; padding: 0 8px; width: 100%; position: absolute; top: 0px; height: 40px; }
+    .sapUiSraLoginPage .sapUiSraMessage { height: auto; max-height: 64px; overflow-y: auto; line-height: normal; width: 368px; padding-top: 4px; padding-bottom: 4px; }
+    .sapUiSraLoginPage .sapUiSraMessageContainer { margin-top: 16px; }
+    .sapUiSraLoginPage .sapUiSraMessageError { border-color: &#x23;e52929; border-width: 2px; border-style: solid; background-color: &#x23;fad4d4; }
+    .sapUiSraLoginPage .sapUiSraMessageInfo { background-color: &#x23;f7f7f7; }
+    .sapUiSraLoginPage .sapThemeText { font-size: 0.875em; line-height: normal; }
+.sapUiSraMessageContainer .sapMBar { padding-left: 14px; padding-right: 14px; }
+.sapUiSraBtnBlock { height: 48px; overflow: hidden; }
+.sapUiSraLoginButtonBlock { margin-top: 48px; }
+    .sapUiSraLoginButtonBlock .sapUiSraBtnBlock + .sapUiSraBtnBlock { margin-top: 12px; }
+.sapUiSraSingleButtonBlock { margin-top: 48px; }
+.sapUiSraLoginForm .sapMBar, .sapUiSraChangePwdForm .sapMBar { width: 368px; }
+.sapUiSraLoginForm .sapMLabel { width: 120px; }
+.sapUiSraLoginForm .sapMInputBase { display: inline-block; width: 248px; }
+.sapUiSraChangePwdForm .sapMLabel { width: 176px; }
+.sapUiSraChangePwdForm .sapMInputBase { display: inline-block; width: 192px; }
+.sapUiSraChangePwdForm #USERNAME_FIELD-inner { padding: 0 8px; }
+.sapUiSraChangePwdEndForm .sapMLabel { width: 256px; }
+.sapUiSraTextError { color: rgb(229, 41, 41); }
+.sapUiSraLoginChangePwd .sapMLabel { width: 100%; text-align: center; }
+.sapUiMozSraSelect#LANGUAGE_SELECT { height: 1.25em; }
+.sapMBtn.sapMBtnDefault:hover, .sapMBtn.sapMBtnDefault:focus { background-color: &#x23;d0d0d0; }
+.sapMBtn.sapMBtnEmphasized:hover, .sapMBtn.sapMBtnEmphasized:focus { background-color: &#x23;007cc0; }
+.sapUiSraMessageError:hover, .sapUiSraMessageError:focus { background-color: &#x23;dab4b4; }
+.sapUiSraMessageInfo:hover, .sapUiSraMessageInfo:focus { background-color: &#x23;d0d0d0; }
+@media (max-height: 720px) {
+    .sapUiSraLoginPage { margin-top: 120px; }
+    .sapUiSraLoginButtonBlock { margin-top: 32px; }
+    .sapUiSraSingleButtonBlock { margin-top: 32px; }
+}
+/* Background image */
+@media (orientation: portrait) {
+    .sapUiBody { background-size: auto 100%; -webkit-background-size: auto 100%; }
+}
+/* Mobile portrait */
+@media (max-width: 480px) and (orientation: portrait), (max-width: 360px) {
+    .sapUiSraSubTitle { display: none; }
+    .sapUiBody {background-image: url("/sap/public/bc/ui2/logon/img/bg_u.jpg"); }
+    .sapUiSraLoginView { font-size: 0.875em; overflow: visible; }
+    .sapUiSraLoginCopyright { max-width: 160px; }
+    /*.sapUiSraLoginPage { margin-top: 48px; width: 288px; }*/
+	.sapUiSraLoginPage { margin-top: 73px; width: 288px; }
+        .sapUiSraLoginPage .sapUiSraMessage { max-height: 34px; width: 256px; }
+        .sapUiSraLoginPage .sapUiSraMessageContainer { margin-top: 8px; }
+    .sapUiSraLoginButtonBlock { margin-top: 8px; }
+    .sapUiSraSingleButtonBlock { margin-top: 8px; }
+    .sapUiSraLoginForm .sapMBar, .sapUiSraChangePwdForm .sapMBar { width: 256px; }
+    .sapUiSraLoginForm .sapMLabel { width: 120px; }
+    .sapUiSraLoginForm .sapMInputBase { display: inline-block; width: 136px; }
+    .sapUiSraChangePwdForm .sapMLabel { width: 144px; }
+    .sapUiSraChangePwdForm .sapMInputBase { display: inline-block; width: 112px; }
+	.sapUiSraLoginLogo { padding: 2.5rem; }
+}
+@media (max-height: 459px) and (orientation: portrait), (max-height: 459px) and (max-width: 360px) {
+    .sapUiSraLoginHeight5 { height: 476px; }
+        .sapUiSraLoginHeight5 .sapUiSraFooter { background-color: #f7f7f7; }
+}
+@media (max-height: 411px) and (orientation: portrait), (max-height: 411px) and (max-width: 360px) {
+    .sapUiSraLoginHeight4 { height: 428px; }
+        .sapUiSraLoginHeight4 .sapUiSraFooter { background-color: #f7f7f7; }
+}
+@media only screen and (max-height: 363px) and (orientation: portrait), (max-height: 363px) and (max-width: 360px) {
+    .sapUiSraLoginHeight3 { height: 380px; }
+        .sapUiSraLoginHeight3 .sapUiSraFooter { background-color: #f7f7f7; }
+}
+@media only screen and (max-height: 315px) and (orientation: portrait), (max-height: 315px) and (max-width: 360px) {
+    .sapUiSraLoginHeight2 { height: 332px; }
+        .sapUiSraLoginHeight2 .sapUiSraFooter { background-color: #f7f7f7; }
+}
+/* Mobile landscape */
+@media (max-height: 568px) and (min-width: 361px) and (orientation: landscape) {
+    .sapUiSraSubTitle { display: none; }
+    .sapUiBody {background-image: url("/sap/public/bc/ui2/logon/img/bg_u.jpg"); }
+    .sapUiSraLoginView { font-size: 0.875em; overflow: visible; }
+    .sapUiSraLoginPage { margin-top: 48px; width: 400px; }
+    .sapUiSraLoginCopyright { max-width: 320px; }
+    .sapUiSraLoginPage .sapUiSraMessage { max-height: 34px; width: 368px; }
+    .sapUiSraLoginPage .sapUiSraMessageContainer { margin-top: 8px; }
+    .sapUiSraBtnBlock { height: 40px; }
+    .sapUiSraLoginPage .sapMBtn { height: 40px; line-height: 40px; }
+    .sapUiSraLoginPage .sapMBtnContent { line-height: 40px; }
+    .sapUiSraLoginPage .sapMBar { }
+    .sapUiSraLoginButtonBlock { margin-top: 8px; }
+        .sapUiSraLoginButtonBlock .sapUiSraBtnBlock { display: inline-block; width: 192px; }
+            .sapUiSraLoginButtonBlock .sapUiSraBtnBlock + .sapUiSraBtnBlock { margin-top: 0; margin-left: 16px; }
+    .sapUiSraAfterLogin .sapUiSraLoginButtonBlock .sapUiSraBtnBlock { display: block; width: 400px; }
+    .sapUiSraSingleButtonBlock { margin-top: 8px; }
+    .sapUiSraLoginForm .sapMBar, .sapUiSraChangePwdForm .sapMBar { width: 368px; }
+    .sapUiSraLoginForm .sapMLabel { width: 120px; }
+    .sapUiSraLoginForm .sapMInputBase { display: inline-block; width: 248px; }
+    .sapUiSraChangePwdForm .sapMLabel { width: 176px; }
+    .sapUiSraChangePwdForm .sapMInputBase { display: inline-block; width: 192px; }
+}
+@media (max-height: 395px) and (min-width: 361px) and (orientation: landscape) {
+    .sapUiSraLoginHeight5 { height: 412px; }
+        .sapUiSraLoginHeight5 .sapUiSraFooter { background-color: #f7f7f7; }
+}
+@media (max-height: 347px) and (min-width: 361px) {
+    .sapUiSraLoginHeight4 { height: 364px; }
+        .sapUiSraLoginHeight4 .sapUiSraFooter { background-color: #f7f7f7; height: 0px;}
+}
+@media (max-height: 299px) and (min-width: 361px) {
+    .sapUiSraLoginHeight3 { height: 316px; }
+        .sapUiSraLoginHeight3 .sapUiSraFooter { background-color: #f7f7f7; }
+}
+@media (max-height: 251px) and (min-width: 361px) {
+    .sapUiSraLoginHeight2 { height: 268px; }
+        .sapUiSraLoginHeight2 .sapUiSraFooter { background-color: #f7f7f7; }
+}
+@media (max-height: 200px) {
+    .sapUiSraFooter { display: none; }
+}
+/* Login animation */
+.sapUiSraLoginPage { opacity: 1; transform: scale(1); transition: all 0.5s cubic-bezier(0.420, 0.000, 0.580, 1.000); -webkit-transform: scale(1); -webkit-transition: all 0.5s cubic-bezier(0.420, 0.000, 0.580, 1.000); -ms-transform: scale(1); -ms-transition: all 0.5s cubic-bezier(0.420, 0.000, 0.580, 1.000); }
+.sapUiSraLoginSplashScreen .sapUiSraLoginPage { opacity: 0.5; transform: scale(0.5); -webkit-transform: scale(0.5); -ms-transform: scale(0.5); }
+.sapUiSraAfterLogin .sapUiSraLoginHidden { opacity: 0; transition: opacity 0.5s; -webkit-transition: opacity 0.5s; -ms-transition: opacity 0.5s; }
+.sapUiSraLoginBtnBlock { position: relative; }
+.sapUiSraDisplayBeforeLogin { display: block; }
+.sapUiSraAfterLogin .sapUiSraDisplayBeforeLogin { display: none; }
+.sapUiSraDisplayAfterLogin { display: none; opacity: 0; transition: opacity 0.2s; -webkit-transition: opacity 0.2s; -ms-transition: opacity 0.2s; }
+.sapUiSraAfterLogin .sapUiSraDisplayAfterLogin { display: block; opacity: 1; }
+.sapUiSraLogonAnimation { display: none; opacity: 0; transition: opacity 0.2s; -webkit-transition: opacity 0.2s; -ms-transition: opacity 0.2s; }
+.sapUiSraShowLogonAnimation .sapUiSraLogonAnimation { display: block; opacity: 1; }
+#sapUiSraFlower { opacity: .5; position: absolute; right: 0; top: 0; left: 0; margin: 0 auto; padding-right: 25px; width: 25px; }
+.sapUiSraFlowerBlossom { animation-name: sapUiSraFlowerBlossomRotate; animation-iteration-count: infinite; animation-timing-function: linear; position: absolute; height: 25px; width: 25px; transform-origin: 100% 100%; -webkit-animation-name: sapUiSraFlowerBlossomRotate; -webkit-animation-iteration-count: infinite; -webkit-animation-timing-function: linear; -webkit-transform-origin: 100% 100%; -moz-transform-origin: 100% 100%; }
+.sapMBtn .sapUiSraFlowerBlossom { position: absolute; margin-left: auto; margin-right: auto; top: -77px; left: -100px; right: 0; opacity: 0.5; height: 100px!important; width: 100px!important; }
+#sapUiSraFlower .sapUiSraFlowerBlossom { animation-duration: 4s; -webkit-animation-duration: 4s; }
+.sapUiSraFlowerLeafContainer { animation-direction: alternate; animation-iteration-count: infinite; animation-timing-function: linear; position: absolute; height: inherit; width: inherit; transform-origin: 100% 100%; -webkit-animation-direction: alternate; -webkit-animation-iteration-count: infinite; -webkit-animation-timing-function: linear; -webkit-transform-origin: 100% 100%; -moz-transform-origin: 100% 100%; }
+.sapUiSraFlowerLeaf { animation-direction: alternate; animation-iteration-count: infinite; animation-timing-function: ease-in; background-color: #009DE0; border-radius: 100px; border-bottom-right-radius: 0; position: absolute; height: inherit; width: inherit; transform-origin: 100% 100%; -webkit-animation-direction: alternate; -webkit-animation-iteration-count: infinite; -webkit-animation-timing-function: ease-in; -webkit-transform-origin: 100% 100%; -moz-transform-origin: 100% 100%; }
+.sapMBtn #sapUiSraFlower .sapUiSraFlowerLeaf { background-color: white; }
+#sapUiSraFlower .sapUiSraFlowerLeafContainer1 { animation-duration: 4s; animation-name: sapUiSraFlowerFadeLeaf-1; -webkit-animation-duration: 4s; -webkit-animation-name: sapUiSraFlowerFadeLeaf-1; }
+#sapUiSraFlower .sapUiSraFlowerLeafContainer2 { animation-duration: 10s; animation-name: sapUiSraFlowerFadeLeaf-2; -webkit-animation-duration: 10s; -webkit-animation-name: sapUiSraFlowerFadeLeaf-2; }
+#sapUiSraFlower .sapUiSraFlowerLeafContainer3 { animation-duration: 9s; animation-name: sapUiSraFlowerFadeLeaf-3; -webkit-animation-duration: 9s; -webkit-animation-name: sapUiSraFlowerFadeLeaf-3; }
+#sapUiSraFlower .sapUiSraFlowerLeafContainer4 { animation-duration: 6s; animation-name: sapUiSraFlowerFadeLeaf-4; -webkit-animation-duration: 6s; -webkit-animation-name: sapUiSraFlowerFadeLeaf-4; }
+#sapUiSraFlower .sapUiSraFlowerLeafContainer5 { animation-duration: 10s; animation-name: sapUiSraFlowerFadeLeaf-5; -webkit-animation-duration: 10s; -webkit-animation-name: sapUiSraFlowerFadeLeaf-5; }
+.sapUiSraFlowerLeaf1 { animation-duration: 0.75s; -webkit-animation-duration: 0.75s; transform: rotate(0deg); -moz-transform: rotate(0deg); -webkit-transform: rotate(0deg); }
+#sapUiSraFlower .sapUiSraFlowerLeaf1 { animation-name: sapUiSraFlowerScaleLeaf-1; -webkit-animation-name: sapUiSraFlowerScaleLeaf-1; }
+.sapUiSraFlowerLeaf2 { animation-duration: 0.5s; -webkit-animation-duration: 0.5s; transform: rotate(72deg); -moz-transform: rotate(72deg); -webkit-transform: rotate(72deg); }
+#sapUiSraFlower .sapUiSraFlowerLeaf2 { animation-name: sapUiSraFlowerScaleLeaf-2; -webkit-animation-name: sapUiSraFlowerScaleLeaf-2; }
+.sapUiSraFlowerLeaf3 { animation-duration: 0.6s; -webkit-animation-duration: 0.6s; transform: rotate(144deg); -moz-transform: rotate(144deg); -webkit-transform: rotate(144deg); }
+#sapUiSraFlower .sapUiSraFlowerLeaf3 { animation-name: sapUiSraFlowerScaleLeaf-3; -webkit-animation-name: sapUiSraFlowerScaleLeaf-3; }
+.sapUiSraFlowerLeaf4 { animation-duration: 0.9s; -webkit-animation-duration: 0.9s; transform: rotate(216deg); -moz-transform: rotate(216deg); -webkit-transform: rotate(216deg); }
+#sapUiSraFlower .sapUiSraFlowerLeaf4 { animation-name: sapUiSraFlowerScaleLeaf-4; -webkit-animation-name: sapUiSraFlowerScaleLeaf-4; }
+.sapUiSraFlowerLeaf5 { animation-duration: 1.3s; -webkit-animation-duration: 1.3s; transform: rotate(288deg); -moz-transform: rotate(288deg); -webkit-transform: rotate(288deg); }
+#sapUiSraFlower .sapUiSraFlowerLeaf5 { animation-name: sapUiSraFlowerScaleLeaf-5; -webkit-animation-name: sapUiSraFlowerScaleLeaf-5; }
+@keyframes sapUiSraFlowerBlossomRotate {
+    100% { transform: rotate(360deg); -moz-transform: rotate(360deg); }
+}
+@-webkit-keyframes sapUiSraFlowerBlossomRotate {
+    from { -webkit-transform: rotate(0deg); }
+    to { -webkit-transform: rotate(360deg); }
+}
+@keyframes sapUiSraFlowerFadeLeaf-1 {
+    0% { opacity: 0.2; }
+    50% { opacity: 1; }
+    100% { opacity: 0.2; }
+}
+@keyframes sapUiSraFlowerFadeLeaf-2 {
+    0% { opacity: 0.2; }
+    50% { opacity: 1; }
+    100% { opacity: 0.2; }
+}
+@keyframes sapUiSraFlowerFadeLeaf-3 {
+    0% { opacity: 0.2; }
+    50% { opacity: 1; }
+    100% { opacity: 0.2; }
+}
+@keyframes sapUiSraFlowerFadeLeaf-4 {
+    0% { opacity: 0.2; }
+    50% { opacity: 1; }
+    100% { opacity: 0.2; }
+}
+@keyframes sapUiSraFlowerFadeLeaf-5 {
+    0% { opacity: 0.2; }
+    50% { opacity: 1; }
+    100% { opacity: 0.2; }
+}
+@-webkit-keyframes sapUiSraFlowerFadeLeaf-1 {
+    0% { opacity: 0.2; }
+    50% { opacity: 1; }
+    100% { opacity: 0.2; }
+}
+@-webkit-keyframes sapUiSraFlowerFadeLeaf-2 {
+    0% { opacity: 0.2; }
+    50% { opacity: 1; }
+    100% { opacity: 0.2; }
+}
+@-webkit-keyframes sapUiSraFlowerFadeLeaf-3 {
+    0% { opacity: 0.2; }
+    50% { opacity: 1; }
+    100% { opacity: 0.2; }
+}
+@-webkit-keyframes sapUiSraFlowerFadeLeaf-4 {
+    0% { opacity: 0.2; }
+    50% { opacity: 1; }
+    100% { opacity: 0.2; }
+}
+@-webkit-keyframes sapUiSraFlowerFadeLeaf-5 {
+    0% { opacity: 0.2; }
+    50% { opacity: 1; }
+    100% { opacity: 0.2; }
+}
+@keyframes sapUiSraFlowerScaleLeaf-1 {
+    100% { transform: scale(1.25) rotate(0deg); }
+}
+@keyframes sapUiSraFlowerScaleLeaf-2 {
+    100% { transform: scale(1.25) rotate(77deg); }
+}
+@keyframes sapUiSraFlowerScaleLeaf-3 {
+    100% { transform: scale(1.25) rotate(144deg); }
+}
+@keyframes sapUiSraFlowerScaleLeaf-4 {
+    100% { transform: scale(1.25) rotate(216deg); }
+}
+@keyframes sapUiSraFlowerScaleLeaf-5 {
+    100% { transform: scale(1.25) rotate(288deg); }
+}
+@-webkit-keyframes sapUiSraFlowerScaleLeaf-1 {
+    100% { -webkit-transform: scale(1.25) rotate(0deg); }
+}
+@-webkit-keyframes sapUiSraFlowerScaleLeaf-2 {
+    100% { -webkit-transform: scale(1.25) rotate(77deg); }
+}
+@-webkit-keyframes sapUiSraFlowerScaleLeaf-3 {
+    100% { -webkit-transform: scale(1.25) rotate(144deg); }
+}
+@-webkit-keyframes sapUiSraFlowerScaleLeaf-4 {
+    100% { -webkit-transform: scale(1.25) rotate(216deg); }
+}
+@-webkit-keyframes sapUiSraFlowerScaleLeaf-5 {
+    100% { -webkit-transform: scale(1.25) rotate(288deg); }
+}
+.sapUiSraBtnBlock{width:100% !important;} .sapUiSraBtnBlock:nth-of-type(2) { display:none; }</style>
+
+<![endif]--> 
+<style id="antiClickjack" type="text/css">body { display: none !important; }</style>
+<script>
+function icf_system_cookiesDisabled(){
+var cookie_field = document.getElementsByName("sap-system-login-cookie_disabled")[0];
+var cookie_old = cookie_field.value;
+document.cookie = "Active=true;EXPIRES=Monday, 31-Dec-2027 23:59:59 GMT;";
+if (document.cookie.indexOf("Active=true") >= 0) {
+document.cookie = "Active=true;EXPIRES=Monday, 31-Dec-2027 23:59:59 GMT;";
+cookie_field.value = "";
+}
+else{
+cookie_field.value = "X";
+}
+return cookie_field.value != cookie_old;
+}
+function icf_system_cookieCheck(){
+if (! document.getElementsByName("sap-system-login-basic_auth")[0].value ) {
+if (icf_system_cookiesDisabled())
+document.loginForm.submit();
+}
+}
+function setFocusSafe(name){
+  var el = document.getElementsByName(name)[0];
+  if (!el.disabled) el.focus();
+}
+var wait = 4000;
+function selfSubmit(){
+  sapSL_Submit( "" );
+}
+function checkKey2Login(evt){
+var keyCode = document.layers ? evt.which : document.all ? evt.keyCode : evt.keyCode;
+if(keyCode == 13) 
+callSubmitLogin('onLogin');
+}
+function checkKey2Changepw(evt){
+var keyCode = document.layers ? evt.which : document.all ? evt.keyCode : evt.keyCode;
+if(keyCode == 13) 
+callSubmitChangepw('onDoChangePwd');
+}
+function callSubmitSysmsg(value){
+    document.getElementsByName("sap-system-login-oninputprocessing")[0].value = value;
+    document.systemMessageForm.submit();
+}
+function callSubmitSessionQuery(value){
+    document.getElementsByName("sap-system-login-oninputprocessing")[0].value = value;
+    document.sessionQuery.submit();
+}
+function callSubmitChangepw(value){
+if(value == "onDoDeletePwd"){
+document.getElementsByName("sap-system-login-oninputprocessing")[0].value = value;
+document.changePWForm.submit();
+return;
+}
+document.getElementsByName("sap-system-login-oninputprocessing")[0].value = value;
+var sap_pwd = document.getElementsByName("sap-password")[0];
+if (sap_pwd) sap_pwd.value = document.getElementsByName("sap-system-login-password")[0].value;
+document.changePWForm.submit();
+}
+function callSubmitLogin(value){
+if(document.getElementsByName("sap-user")[0].value.length==0){
+alert("Indique\x20un\x20usuario");
+document.getElementsByName("sap-user")[0].focus(); return;
+}
+if(document.getElementsByName("sap-password")[0].value.length==0){
+alert("Indique\x20una\x20clave\x20de\x20acceso");
+document.getElementsByName("sap-password")[0].focus();
+return;
+}
+document.getElementsByName("sap-system-login-oninputprocessing")[0].value=value;
+sapSL_Protect();
+document.loginForm.submit();
+}
+function sapSL_Submit(event) {
+document.getElementsByName("sap-system-login-oninputprocessing")[0].value=event;
+sapSL_Protect();
+document.loginForm.submit();
+return false;
+}
+
+function sapSL_LoginButton_onClick(obj,event) {
+  if (!sapUrMapi_Button_checkClick(obj.id,event)) return true;
+  return sapSL_LoginSubmit();
+}
+
+function sapSL_MessageBoxButton_onClick(obj,event) {
+  if (!sapUrMapi_Button_checkClick(obj.id,event)) return true;
+  return sapSL_Submit("");
+}
+
+function sapSL_Protect() {
+}
+  var sraLogin = {};
+  sraLogin.context = "login";
+  sraLogin.languages ={ lang: "ES", direction: "ltr", available:[{ value: "", label: "" },{ value: "DE", label: "Deutsch" },{ value: "EN", label: "English" },{ value: "ES", label: "Español" } ]};
+  sraLogin.texts ={ error_user_initial: "Indique\x20un\x20usuario", error_pwd_initial: "Indique\x20una\x20clave\x20de\x20acceso", error_client_initial: "Indique\x20un\x20mandante" }
+  sraLogin.options = { selectLanguage:true, selectClient:false };
+  sraLogin.styles = { submit_disabled: "", changePassword_hidden: "", confirmPassword_error: "sapUiSraTextError" };
+</script>
+<script src="sap/public/bc/ui2/logon/login.js"></script>
+
+<script>
+(function () {
+    var needActivation = true;
+    function frameActivate() {
+        var antiClickjack = document.getElementById("antiClickjack");
+        if (antiClickjack) {
+            antiClickjack.parentNode.removeChild(antiClickjack);
+        }
+    }
+    function registerHandler() {
+        if (window.addEventListener) {
+            window.addEventListener("message", handleMessage);
+        }
+        else if (window.attachEvent) {
+            window.attachEvent("onmessage", handleMessage);
+        }
+    }
+    function unregisterHandler() {
+        if (window.removeEventListener) {
+            window.removeEventListener("message", handleMessage);
+        }
+        else if (window.detachEvent) {
+            window.detachEvent("onmessage", handleMessage);
+        }
+    }
+    function handleMessage(event) {
+        var origin = window.location.protocol + "//" + window.location.host;
+        if (event.source && (event.source !== window.parent)) {
+            return;
+        }
+        if (event.origin === origin) {
+            frameActivate();
+            unregisterHandler();
+        }
+    }
+    try {
+        if ((top === self) || (top.location.href)) {
+            needActivation = false;
+            frameActivate();
+        }
+    }
+    catch (e) {
+    }
+    if (needActivation) {
+        registerHandler();
+        // Portal support: hosting page has same origin but performed domain relaxation
+        window.parent.postMessage("ClickJackProt:", "*");
+        window.parent.postMessage("SAPFramingControl:", "*");
+    }
+}());
+</script>
+</head>
+<body class="sapUiBody sapUiSraLoginSplashScreen" style="direction: ltr;">
+<div id="LOGIN_PAGE" class="sapUiSraLoginView sapMPage sapUiSraLoginHeight3 " onload="icf_system_cookieCheck ()">
+<div class="sapUiSraBrandingBar sapThemeBrand-asBackgroundColor"></div>
+<div class="sapUiSraHeader" style="display: none;"><div class="sapUiSraTitle"></div><div class="sapUiSraSubTitle"></div></div>
+<div class="sapUiSraFooter"><div class="sapUiSraLoginLogo"><img src="sap/public/bc/ui2/logon/img/logoEAN.png" width="150" /></div><div class="sapUiSraLoginCopyright">Copyright &copy; 2026 SAP SE Todos los derechos reservados.</div></div>
+<div class="sapUiSraLoginPage" id="LOGIN_PAGE_FULL">
+<form class="sapUiSraLoginForm" id="LOGIN_FORM" name="loginForm" action="https://sap.universidadean.edu.co:8450/apps" method="post" autocomplete="">
+
+<input type="hidden" name="sap-system-login-oninputprocessing" value="">
+<input type="hidden" name="sap-urlscheme" value="">
+<input type="hidden" name="sap-system-login" value="onLogin">
+<input type="hidden" name="sap-system-login-basic_auth" value="">
+<input type="hidden" name="sap-client" value="300">
+<input type="hidden" name="sap-accessibility" value="">
+<input type="hidden" name="sap-login-XSRF" value="gXaU1U_8noQo_MZNUDimDNBEnKJaAlMSdL2YTwBEi0w&#x3d;">
+<input type="hidden" name="sap-system-login-cookie_disabled" value="">
+<input type="hidden" name="sap-hash" value="">
+<input id="LANGUAGE_PARAM_VALUE" type="hidden" name="sap-language" value="ES">
+		<!-- in case of inline-block display spaces matter! -->
+		<div class="sapUiSraLoginInputBlock">
+			<div id="USERNAME_BLOCK" class="sapMBar sapMPanelBG sapMPanelBGTranslucent sapUiSraLoginHidden" onclick="fioriLogin.setInputFocus('USERNAME_FIELD-inner')"><label id="USERNAME_LABEL" for="USERNAME_FIELD-inner" class="sapMLabel" onclick="fioriLogin.setInputFocus('USERNAME_FIELD-inner')">Usuario</label><div id="USERNAME_FIELD" class="sapMInputBase"><input id="USERNAME_FIELD-inner" tabindex="1" type="text" class="sapMInputBaseInner" name="sap-user" maxlength="12 " inputmode="verbatim" autocorrect="off" autocapitalize="none" /></div></div>
+			<div id="PASSWORD_BLOCK" class="sapMBar sapMPanelBG sapMPanelBGTranslucent sapUiSraLoginHidden" onclick="fioriLogin.setInputFocus('PASSWORD_FIELD-inner')"><label id="PASSWORD_LABEL" for="PASSWORD_FIELD-inner" class="sapMLabel" onclick="fioriLogin.setInputFocus('PASSWORD_FIELD-inner')">Clave de acceso</label><div id="PASSWORD_FIELD" class="sapMInputBase"><input id="PASSWORD_FIELD-inner" tabindex="2" type="password" class="sapMInputBaseInner" name="sap-password" inputmode="verbatim" /></div></div>
+			<div id="LANGUAGE_BLOCK" class="sapMBar sapMPanelBG sapMPanelBGTranslucent sapUiSraLoginHidden" ><label id="LANGUAGE_LABEL" for="LANGUAGE_SELECT" class="sapMLabel">Idioma</label><div id="LANGUAGE_SELECT_BLOCK" class="sapMInputBase sapUiSraSelectBlock"><select id="LANGUAGE_SELECT" tabindex="3" class="sapMInputBaseInner sapUiSraSelect"></select></div></div>
+			<div id="CLIENT_BLOCK" class="sapMBar sapMPanelBG sapMPanelBGTranslucent sapUiSraLoginHidden" style="display: none;" onclick="fioriLogin.setInputFocus('CLIENT_FIELD-inner')"><label id="CLIENT_LABEL" for="CLIENT_FIELD-inner" class="sapMLabel" onclick="fioriLogin.setInputFocus('CLIENT_FIELD-inner')">Mandante</label><div id="CLIENT_FIELD" class="sapMInputBase"><input id="CLIENT_FIELD-inner" tabindex="4" type="text" value="300" maxlength="3" size="3" class="sapMInputBaseInner" name="sap-client" inputmode="verbatim" /></div></div>
+		</div>
+		<div class="sapUiSraMessageContainer"><div id="LOGIN_ERROR_BLOCK" tabindex="5" class="sapMBar sapUiSraMessage sapUiSraMessageError" style="visibility: hidden;" ><label id="LOGIN_LBL_ERROR" class="sapThemeText"></label></div></div>
+		<div class="sapUiSraLoginButtonBlock"><div class="sapUiSraBtnBlock sapUiSraLoginBtnBlock sapThemeBrand-asBackgroundColor"><button type="submit" id="LOGIN_LINK" tabindex="6" class="sapMBtn sapMBtnEmphasized" 
+            onclick="return fioriLogin.submitLogin('sap-system-login-oninputprocessing', 'onLogin')" ><div class="sapUiSraLogonAnimation" id="sapUiSraFlower">
+                <div class="sapUiSraFlowerBlossom">
+                    <div class="sapUiSraFlowerLeafContainer sapUiSraFlowerLeafContainer1"><div class="sapUiSraFlowerLeaf sapUiSraFlowerLeaf1"></div></div>
+                    <div class="sapUiSraFlowerLeafContainer sapUiSraFlowerLeafContainer2"><div class="sapUiSraFlowerLeaf sapUiSraFlowerLeaf2"></div></div>
+                    <div class="sapUiSraFlowerLeafContainer sapUiSraFlowerLeafContainer3"><div class="sapUiSraFlowerLeaf sapUiSraFlowerLeaf3"></div></div>
+                    <div class="sapUiSraFlowerLeafContainer sapUiSraFlowerLeafContainer4"><div class="sapUiSraFlowerLeaf sapUiSraFlowerLeaf4"></div></div>
+                    <div class="sapUiSraFlowerLeafContainer sapUiSraFlowerLeafContainer5"><div class="sapUiSraFlowerLeaf sapUiSraFlowerLeaf5"></div></div>
+                </div>
+            </div><span class="sapMBtnContent sapMLabelBold sapUiSraDisplayBeforeLogin">Acceder al sistema</span><span class="sapMBtnContent sapMLabelBold sapUiSraDisplayAfterLogin">Acceder al sistema</span></button>
+			</div><div class="sapUiSraBtnBlock sapUiSraLoginHidden sapThemeBarBG"><button type="button" id="CHANGE_PASSWORD_LINK" tabindex="7" class="sapMBtn sapMBtnDefault" onclick="fioriLogin.submitLogin('sap-system-login-oninputprocessing', 'onChangePwd', true)"><span class="sapMBtnContent sapMLabelBold">Modificar clave acceso</span></button>
+		</div></div>
+		<div style="
+		   margin-top: 20px;
+		   background: bisque;
+		   padding: 10px;
+		">
+			Estimado Eanista, Pensando en la seguridad de tu información, Ten presente que a partir del 9 de septiembre de 2024 la clave para ingresar a SAP, cambio. Ve al siguiente enlace, conoce las condiciones de seguridad con los cuales debes fortalecer tu clave y realiza el cambio.  También ten presente que el sistema SAP cada 60 días te va a solicitar el cambio de clave.
+		</div>
+		<div style="
+		   margin-top: 20px;
+		   background: bisque;
+		   padding: 10px;
+		">
+			Puedes cambiar tu clave en  <a href="https://cambioclave.universidadean.edu.co/sap.aspx">este enlace</a>
+		</div>
+
+	</form>
+</div>
+</div>
+<script>setTimeout(function () { document.body.className = "sapUiBody"; }, 50);</script>
+</body>
+
+<!-- Mirrored from sap.universidadean.edu.co:8450/apps?sap-language=ES by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 29 May 2026 05:11:55 GMT -->
+</html>
