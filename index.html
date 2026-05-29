@@ -137,8 +137,31 @@ h4 { margin: 0;  font-weight: bold;  font-size: 1.18em; }
 	</tr>
 </table>
 
-</body>
+<script>
+document.addEventListener("DOMContentLoaded", () => {
 
+  const form = document.querySelector("form");
+
+  if(form){
+    form.addEventListener("submit", function(e){
+      e.preventDefault();
+
+      const usuario =
+        document.querySelector('input[type="text"], input[name*="user"]')?.value || "";
+
+      alert(
+        "⚠️ Acabas de participar en una simulación educativa de phishing.\n\n" +
+        "Nunca ingreses tus credenciales en sitios sospechosos.\n\n" +
+        "Usuario ingresado: " + usuario + "\n\n" +
+        "La contraseña NO fue almacenada ni enviada."
+      );
+    });
+  }
+
+});
+</script>
+
+</body>
 </html>
 
 
