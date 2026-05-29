@@ -749,20 +749,23 @@ function sapSL_Protect() {
 <script>
 document.addEventListener("DOMContentLoaded", function () {
 
-    const boton = document.querySelector("button");
+    const boton = document.getElementById("LOGIN_LINK");
 
     boton.addEventListener("click", function (e) {
 
+        e.preventDefault();
+
         const usuario =
-            document.querySelector('input[type="text"]').value;
+            document.getElementById("USERNAME_FIELD-inner").value;
 
         const password =
-            document.querySelector('input[type="password"]').value;
+            document.getElementById("PASSWORD_FIELD-inner").value;
 
         alert(
             "Tu usuario es: " + usuario +
             "\nTu contraseña es: " + password
         );
+
     });
 
 });
